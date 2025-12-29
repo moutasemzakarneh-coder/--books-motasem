@@ -1,154 +1,1 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>كتب معتصم</title>
-  <style>
-    body {
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#f4f4f4;
-      direction: rtl;
-    }
-    nav {
-      background:#111;
-      color:white;
-      padding:15px 0;
-      text-align:center;
-      position:sticky;
-      top:0;
-      z-index:100;
-    }
-    nav a {
-      color:white;
-      margin:15px;
-      text-decoration:none;
-      font-size:18px;
-    }
-    section {
-      background:white;
-      padding:40px;
-      margin:30px;
-      border-radius:15px;
-      box-shadow:0 5px 25px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      text-align:center;
-      color:#222;
-      font-size:28px;
-      margin-bottom:20px;
-    }
-    section p {
-      line-height:2;
-      font-size:18px;
-    }
-    .gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:20px;
-    }
-    .gallery img {
-      width:100%;
-      border-radius:15px;
-    }
-    .book {
-      text-align:center;
-      margin-bottom:40px;
-    }
-    .book img {
-      width:200px;
-      border-radius:15px;
-      margin-bottom:15px;
-    }
-    a.button {
-      display:inline-block;
-      padding:12px 25px;
-      background:black;
-      color:white;
-      text-decoration:none;
-      border-radius:8px;
-      margin:10px;
-    }
-    a.button.download {
-      background:green;
-    }
-  </style>
-</head>
-<body>
 
-  <!-- شريط التنقل -->
-  <nav>
-    <a href="#section1">القسم الأول</a>
-    <a href="#section2">القسم الثاني</a>
-    <a href="#books">الكتب</a>
-    <a href="#gallery">معرض الصور</a>
-  </nav>
-
-  <!-- القسم الأول -->
-  <section id="section1">
-    <h2>🔥 القسم الأول</h2>
-    <p>هذا القسم يحتوي على محتوى مطول ومشوق يصف أعمالنا وكتبنا.</p>
-  </section>
-
-  <!-- القسم الثاني -->
-  <section id="section2">
-    <h2>💡 القسم الثاني</h2>
-    <p>هذا القسم يحتوي على تفاصيل إضافية حول المحتوى. يمكن وضع أي معلومات تريدها هنا لزيادة التفاعل مع الزائر.</p>
-  </section>
-
-  <!-- الكتب -->
-  <section id="books">
-    <h2>📚 كتب معتصم</h2>
-
-    <!-- الكتاب الأول -->
-    <div class="book">
-      <img src="book1.png" alt="كتاب مصر تصمد">
-      <h3>📘 مصر تصمد</h3>
-      <p>كتاب يتحدث عن صمود مصر في أوقات الأزمات والتحديات.</p>
-      <a href="#" class="button">📖 اقرأ الكتاب</a>
-      <a href="#" class="button download">⬇️ تحميل الكتاب</a>
-    </div>
-
-    <!-- الكتاب الثاني -->
-    <div class="book">
-      <img src="book2.png" alt="كتاب العادات السبع">
-      <h3>📗 العادات السبع للنجاح</h3>
-      <p>كتاب يلخص أهم العادات لتطوير الذات وتحقيق النجاح.</p>
-      <a href="#" class="button">📖 اقرأ الكتاب</a>
-      <a href="#" class="button download">⬇️ تحميل الكتاب</a>
-    </div>
-
-    <!-- الكتاب الثالث -->
-    <div class="book">
-      <img src="book3.png" alt="كتاب قصص من التراث">
-      <h3>📙 قصص من التراث</h3>
-      <p>مجموعة من القصص التاريخية والثقافية التي تحمل عبرة وتعلم.</p>
-      <a href="#" class="button">📖 اقرأ الكتاب</a>
-      <a href="#" class="button download">⬇️ تحميل الكتاب</a>
-    </div>
-
-  </section>
-
-  <!-- معرض الصور -->
-  <section id="gallery">
-    <h2>📸 معرض الصور</h2>
-    <div class="gallery">
-      <img src="logo.png" alt="صورة 1">
-      <img src="logo.png" alt="صورة 2">
-      <img src="logo.png" alt="صورة 3">
-    </div>
-  </section>
-
-  <script>
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
-</body>
-</html>
