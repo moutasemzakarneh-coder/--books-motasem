@@ -1,1 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>كتب معتصم – الموقع الرسمي</title>
+  <style>
+    body {
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#f4f4f4;
+      direction: rtl;
+    }
+    nav {
+      background:#111;
+      color:white;
+      padding:15px 0;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color:white;
+      margin:15px;
+      text-decoration:none;
+      font-size:18px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+    nav a:hover {
+      color:gold;
+      transform:scale(1.1);
+    }
+    section {
+      background:white;
+      padding:50px 40px;
+      margin:40px auto;
+      border-radius:15px;
+      max-width:1000px;
+      box-shadow:0 5px 25px rgba(0,0,0,0.1);
+      transition:0.6s;
+      opacity:0;
+      transform:translateY(30px);
+    }
+    section.visible {
+      opacity:1;
+      transform:translateY(0);
+    }
+    section h2 {
+      text-align:center;
+      color:#222;
+      font-size:32px;
+      margin-bottom:25px;
+    }
+    section p {
+      line-height:2;
+      font-size:18px;
+    }
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+    .gallery img {
+      width:100%;
+      border-radius:15px;
+      transition:0.5s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    }
+    .book {
+      text-align:center;
+      margin-bottom:50px;
+      transition:0.3s;
+    }
+    .book img {
+      width:220px;
+      border-radius:15px;
+      margin-bottom:20px;
+      transition:0.5s;
+    }
+    .book img:hover {
+      transform:scale(1.1) rotate(-2deg);
+      box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    }
+    a.button {
+      display:inline-block;
+      padding:15px 30px;
+      background:black;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      margin:10px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+    a.button:hover {
+      background:gold;
+      color:black;
+      transform:scale(1.05);
+    }
+    a.button.download:hover {
+      background:green;
+      color:white;
+    }
+    .share-buttons a {
+      display:inline-block;
+      padding:10px 20px;
+      margin:5px;
+      border-radius:8px;
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:0.3s;
+    }
+    .share-facebook { background:#3b5998; }
+    .share-twitter { background:#1da1f2; }
+    .share-buttons a:hover { opacity:0.8; transform:scale(1.05);}
+    .contact-buttons a {
+      display:inline-block;
+      padding:15px 30px;
+      border-radius:10px;
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      margin:10px;
+      transition:0.3s;
+    }
+    .contact-buttons a.phone { background:#0077cc; }
+    .contact-buttons a.whatsapp { background:#25D366; }
+    .contact-buttons a:hover { opacity:0.8; transform:scale(1.05);}
+  </style>
+</head>
+<body>
 
+  <!-- شريط التنقل -->
+  <nav>
+    <a href="#about">عن المؤلف</a>
+    <a href="#books">الكتب</a>
+    <a href="#gallery">معرض الصور</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <!-- عن المؤلف -->
+  <section id="about">
+    <h2>👤 عن المؤلف</h2>
+    <p>أنا معتصم زكارنة، مؤلف وباحث. أهدف من هذا الموقع أن أشارك قصصي وكتبي التي تحمل عبرة وفائدة للقراء. أسعى دائماً لتقديم محتوى هادف ومميز مع تصميم موقع جذاب يسهل على الجميع الوصول إلى محتواه.</p>
+  </section>
+
+  <!-- الكتب -->
+  <section id="books">
+    <h2>📚 كتب معتصم</h2>
+
+    <div class="book">
+      <img src="book1.png" alt="كتاب مصر تصمد">
+      <h3>📘 مصر تصمد</h3>
+      <p>كتاب يروي صمود مصر في أصعب الأوقات، مع أحداث وطنية حقيقية وحكايات ملهمة.</p>
+      <a href="book1.html" class="button">📖 اقرأ الكتاب</a>
+      <a href="book1.pdf" class="button download">⬇️ تحميل الكتاب</a>
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=book1.html" target="_blank" class="share-facebook">شارك على فيسبوك</a>
+        <a href="https://twitter.com/intent/tweet?url=book1.html" target="_blank" class="share-twitter">شارك على تويتر</a>
+      </div>
+    </div>
+
+    <div class="book">
+      <img src="book2.png" alt="كتاب العادات السبع">
+      <h3>📗 العادات السبع للنجاح</h3>
+      <p>دليل كامل لأهم العادات التي تساعدك على تحسين حياتك وتحقيق أهدافك.</p>
+      <a href="book2.html" class="button">📖 اقرأ الكتاب</a>
+      <a href="book2.pdf" class="button download">⬇️ تحميل الكتاب</a>
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=book2.html" target="_blank" class="share-facebook">شارك على فيسبوك</a>
+        <a href="https://twitter.com/intent/tweet?url=book2.html" target="_blank" class="share-twitter">شارك على تويتر</a>
+      </div>
+    </div>
+
+    <div class="book">
+      <img src="book3.png" alt="كتاب قصص من التراث">
+      <h3>📙 قصص من التراث</h3>
+      <p>مجموعة من القصص التراثية والتاريخية التي تحمل عبرة وتعلم القيم الإنسانية.</p>
+      <a href="book3.html" class="button">📖 اقرأ الكتاب</a>
+      <a href="book3.pdf" class="button download">⬇️ تحميل الكتاب</a>
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=book3.html" target="_blank" class="share-facebook">شارك على فيسبوك</a>
+        <a href="https://twitter.com/intent/tweet?url=book3.html" target="_blank" class="share-twitter">شارك على تويتر</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- معرض الصور -->
+  <section id="gallery">
+    <h2>📸 معرض الصور</h2>
+    <div class="gallery">
+      <img src="logo.png" alt="صورة 1">
+      <img src="logo.png" alt="صورة 2">
+      <img src="logo.png" alt="صورة 3">
+      <img src="logo.png" alt="صورة 4">
+      <img src="logo.png" alt="صورة 5">
+    </div>
+  </section>
+
+  <!-- تواصل معنا -->
+  <section id="contact">
+    <h2>📞 تواصل معنا</h2>
+    <p>للاتصال والمكالمات العادية أو التواصل عبر واتساب، استخدم الأزرار التالية:</p>
+    <div class="contact-buttons">
+      <a href="tel:+967788296415" class="phone">📞 اتصل الآن: 0788296415</a>
+      <a href="https://wa.me/967788296415" target="_blank" class="whatsapp">💬 واتساب مباشر</a>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if(target){
+          target.scrollIntoView({behavior:'smooth'});
+        }
+      });
+    });
+
+    // Fade-in effect عند تحميل الصفحة
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold:0.2 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+  </html>
