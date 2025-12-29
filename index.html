@@ -1,136 +1,154 @@
-<body style="margin:0;font-family:Arial;background:#f2f2f2;direction:rtl;">
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>كتب معتصم</title>
+  <style>
+    body {
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#f4f4f4;
+      direction: rtl;
+    }
+    nav {
+      background:#111;
+      color:white;
+      padding:15px 0;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    nav a {
+      color:white;
+      margin:15px;
+      text-decoration:none;
+      font-size:18px;
+    }
+    section {
+      background:white;
+      padding:40px;
+      margin:30px;
+      border-radius:15px;
+      box-shadow:0 5px 25px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      text-align:center;
+      color:#222;
+      font-size:28px;
+      margin-bottom:20px;
+    }
+    section p {
+      line-height:2;
+      font-size:18px;
+    }
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+    .gallery img {
+      width:100%;
+      border-radius:15px;
+    }
+    .book {
+      text-align:center;
+      margin-bottom:40px;
+    }
+    .book img {
+      width:200px;
+      border-radius:15px;
+      margin-bottom:15px;
+    }
+    a.button {
+      display:inline-block;
+      padding:12px 25px;
+      background:black;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      margin:10px;
+    }
+    a.button.download {
+      background:green;
+    }
+  </style>
+</head>
+<body>
 
-  <!-- الهيدر -->
-  <div style="background:black;color:white;padding:40px;text-align:center;">
-    <h1 style="margin:0;">كتب معتصم</h1>
-    <p>قصص – كتب – توثيق – أفكار</p>
-  </div>
+  <!-- شريط التنقل -->
+  <nav>
+    <a href="#section1">القسم الأول</a>
+    <a href="#section2">القسم الثاني</a>
+    <a href="#books">الكتب</a>
+    <a href="#gallery">معرض الصور</a>
+  </nav>
 
-  <!-- صورة كبيرة -->
-  <img src="logo.png" alt="كتب معتصم"
-       style="width:100%;max-height:350px;object-fit:cover;">
-
-  <!-- المحتوى -->
-  <div style="max-width:1000px;margin:40px auto;background:white;padding:40px;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.2);">
-
-    <!-- تعريف -->
-    <h2>من هو معتصم؟</h2>
-    <p style="font-size:18px;line-height:1.9;">
-      أنا معتصم، كاتب وصانع محتوى، أعمل على توثيق القصص
-      والأحداث وكتابتها بأسلوب بسيط وقوي يصل لكل الناس.
-      هذا الموقع هو مساحة لعرض كتبي وكتاباتي.
-    </p>
-
-    <hr>
-
-    <!-- كتاب 1 -->
-    <h2>📕 كتابي الأول</h2>
-    <img src="logo.png" alt="غلاف الكتاب"
-         style="width:250px;display:block;margin:20px auto;border-radius:8px;">
-
-    <p>
-      كتاب يتناول مجموعة من الأفكار والقصص الواقعية
-      بأسلوب مشوّق، مناسب لكل قارئ يبحث عن محتوى صادق.
-    </p>
-
-    <div style="text-align:center;margin:20px;">
-      <a href="book1/page1.html"
-         style="padding:12px 30px;background:black;color:white;text-decoration:none;border-radius:25px;">
-        📖 اقرأ الكتاب
-      </a>
-
-      <a href="book1.pdf"
-         style="padding:12px 30px;background:green;color:white;text-decoration:none;border-radius:25px;margin-right:10px;">
-        ⬇️ تحميل PDF
-      </a>
-    </div>
-
-    <hr>
-
-    <!-- كتاب 2 -->
-    <h2>📘 مصر تصمد</h2>
-
-    <img src="logo.png" alt="غلاف مصر تصمد"
-         style="width:300px;display:block;margin:20px auto;border-radius:8px;">
-
-    <p style="line-height:1.9;">
-      كتاب يوثّق مرحلة حساسة من تاريخ مصر،
-      يروي الأحداث بأسلوب سردي وتحليلي،
-      ويضع القارئ داخل القصة صفحة بعد صفحة.
-    </p>
-
-    <!-- صور إضافية -->
-    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-      <img src="logo.png" style="width:200px;border-radius:8px;">
-      <img src="logo.png" style="width:200px;border-radius:8px;">
-      <img src="logo.png" style="width:200px;border-radius:8px;">
-    </div>
-
-    <div style="text-align:center;margin:30px;">
-      <a href="masr/page1.html"
-         style="padding:14px 35px;background:black;color:white;text-decoration:none;border-radius:30px;">
-        📖 اقرأ الكتاب
-      </a>
-
-      <a href="masr.pdf"
-         style="padding:14px 35px;background:green;color:white;text-decoration:none;border-radius:30px;margin-right:10px;">
-        ⬇️ تحميل PDF
-      </a>
-    </div>
-
-  </div>
-
-  <!-- فوتر -->
-  <div style="background:#111;color:#aaa;text-align:center;padding:20px;">
-    © 2025 – كتب معتصم
-  </div>
-
-<body style="margin:0;font-family:Arial;background:#f4f4f4;direction:rtl;">
-
-  <!-- الهيدر -->
-  <header style="background:#222;color:white;padding:40px;text-align:center;">
-    <h1 style="margin:0;font-size:36px;">موقع معتصم</h1>
-    <p style="font-size:18px;margin-top:10px;">تطوير، تصميم، محتوى مميز</p>
-  </header>
-
-  <!-- صورة رئيسية كبيرة -->
-  <section style="text-align:center;margin:40px 0;">
-    <img src="logo.png" alt="شعار الموقع" style="width:80%;max-width:700px;border-radius:15px;">
+  <!-- القسم الأول -->
+  <section id="section1">
+    <h2>🔥 القسم الأول</h2>
+    <p>هذا القسم يحتوي على محتوى مطول ومشوق يصف أعمالنا وكتبنا.</p>
   </section>
 
-  <!-- أقسام الموقع -->
-  <main style="max-width:1000px;margin:auto;padding:20px;">
-    
-    <section style="background:white;padding:30px;margin-bottom:30px;border-radius:10px;box-shadow:0 0 15px rgba(0,0,0,0.1);">
-      <h2 style="text-align:center;">🔥 القسم الأول</h2>
-      <p style="line-height:1.8;font-size:18px;">
-        هنا تضع محتوى القسم الأول، يمكن نصوص، صور، أو فيديوهات. 
-        حاول تقسيم النصوص لفقرتين أو ثلاث لتسهيل القراءة.
-      </p>
-    </section>
+  <!-- القسم الثاني -->
+  <section id="section2">
+    <h2>💡 القسم الثاني</h2>
+    <p>هذا القسم يحتوي على تفاصيل إضافية حول المحتوى. يمكن وضع أي معلومات تريدها هنا لزيادة التفاعل مع الزائر.</p>
+  </section>
 
-    <section style="background:white;padding:30px;margin-bottom:30px;border-radius:10px;box-shadow:0 0 15px rgba(0,0,0,0.1);">
-      <h2 style="text-align:center;">💡 القسم الثاني</h2>
-      <p style="line-height:1.8;font-size:18px;">
-        هنا محتوى القسم الثاني. يمكن إضافة صور صغيرة أو أي عناصر تصميمية
-        لتعطي الموقع شكل احترافي وجذاب.
-      </p>
-    </section>
+  <!-- الكتب -->
+  <section id="books">
+    <h2>📚 كتب معتصم</h2>
 
-    <section style="background:white;padding:30px;margin-bottom:30px;border-radius:10px;box-shadow:0 0 15px rgba(0,0,0,0.1);">
-      <h2 style="text-align:center;">📸 معرض الصور</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:15px;justify-content:center;">
-        <img src="logo.png" style="width:200px;border-radius:10px;">
-        <img src="logo.png" style="width:200px;border-radius:10px;">
-        <img src="logo.png" style="width:200px;border-radius:10px;">
-      </div>
-    </section>
+    <!-- الكتاب الأول -->
+    <div class="book">
+      <img src="book1.png" alt="كتاب مصر تصمد">
+      <h3>📘 مصر تصمد</h3>
+      <p>كتاب يتحدث عن صمود مصر في أوقات الأزمات والتحديات.</p>
+      <a href="#" class="button">📖 اقرأ الكتاب</a>
+      <a href="#" class="button download">⬇️ تحميل الكتاب</a>
+    </div>
 
-  </main>
+    <!-- الكتاب الثاني -->
+    <div class="book">
+      <img src="book2.png" alt="كتاب العادات السبع">
+      <h3>📗 العادات السبع للنجاح</h3>
+      <p>كتاب يلخص أهم العادات لتطوير الذات وتحقيق النجاح.</p>
+      <a href="#" class="button">📖 اقرأ الكتاب</a>
+      <a href="#" class="button download">⬇️ تحميل الكتاب</a>
+    </div>
 
-  <!-- الفوتر -->
-  <footer style="background:#111;color:#aaa;text-align:center;padding:20px;">
-    © 2025 – موقع معتصم
-  </footer>
+    <!-- الكتاب الثالث -->
+    <div class="book">
+      <img src="book3.png" alt="كتاب قصص من التراث">
+      <h3>📙 قصص من التراث</h3>
+      <p>مجموعة من القصص التاريخية والثقافية التي تحمل عبرة وتعلم.</p>
+      <a href="#" class="button">📖 اقرأ الكتاب</a>
+      <a href="#" class="button download">⬇️ تحميل الكتاب</a>
+    </div>
 
-</body></body>
+  </section>
+
+  <!-- معرض الصور -->
+  <section id="gallery">
+    <h2>📸 معرض الصور</h2>
+    <div class="gallery">
+      <img src="logo.png" alt="صورة 1">
+      <img src="logo.png" alt="صورة 2">
+      <img src="logo.png" alt="صورة 3">
+    </div>
+  </section>
+
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
