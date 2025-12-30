@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>كتب معتصم – الموقع الرسمي</title>
+
+<style>
+:root{
+  --bg:#f4f4f4;--card:#fff;--text:#222;--main:#111;--accent:gold;
+}
+body.dark{--bg:#111;--card:#1e1e1e;--text:#eee;--main:#000;}
+body{
+  margin:0;font-family:Arial;background:var(--bg);color:var(--text);
+  direction:rtl;transition:.3s;
+}
+nav{
+  background:var(--main);color:#fff;padding:15px;text-align:center;
+  position:sticky;top:0;z-index:999;
+}
+nav a{color:white;margin:12px;text-decoration:none;font-weight:bold}
+.toggle{position:absolute;left:15px;cursor:pointer}
+
+section{
+  background:var(--card);padding:40px;margin:40px auto;
+  max-width:900px;border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15)
+}
+
+.book{text-align:center}
+.book img{width:220px;border-radius:15px}
+
+.button{
+  display:inline-block;padding:14px 30px;background:black;color:white;
+  border-radius:10px;margin:10px;text-decoration:none;cursor:pointer
+}
+.download{background:green}
+
+.reader{
+  text-align:center;
+}
+.reader-box{
+  min-height:200px;
+  font-size:20px;
+  line-height:2;
+  margin:20px 0;
+}
+
+.counter{
+  text-align:center;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+input{
+  padding:10px;border-radius:8px;border:1px solid #ccc
+}
+
+/* modal */
+#modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.6);
+  display:none;align-items:center;justify-content:center
+}
+#modal div{
+  background:#fff;padding:30px;border-radius:15px;text-align:center
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <span class="toggle" onclick="toggleDark()">🌙</span>
+  <a href="#about">عنّي</a>
+  <a href="#books">الكتب</a>
+  <a href="#reader">القراءة</a>
+  <a href="#contact">تواصل</a>
+</nav>
+
+<section id="about">
+<h2>👤 عن المؤلف</h2>
+<p>أنا معتصم زكارنة، هذا الموقع لعرض وقراءة كتبي بشكل حديث وآمن.</p>
+<div class="counter">👁️ عدد الزوار: <span id="visits"></span></div>
+</section>
+
+<section id="books">
+<h2>📚 الكتب</h2>
+<div class="book">
+<img src="book1.png">
+<h3>📘 مصر تصمد</h3>
+<p>كتاب وطني مؤثر</p>
+<button class="button" onclick="startReading()">📖 اقرأ الكتاب</button>
+<button class="button download" onclick="openModal()">⬇️ تحميل</button>
+</div>
+</section>
+
+<!-- صفحة القراءة -->
+<section id="reader">
+<h2>📖 قراءة الكتاب</h2>
+
+<div>
+<input id="username" placeholder="اكتب اسمك">
+<button class="button" onclick="saveUser()">تسجيل</button>
+</div>
+
+<div class="reader">
+<div class="reader-box" id="pageText"></div>
+
+<button class="button" onclick="prevPage()">⬅️ السابق</button>
+<button class="button" onclick="nextPage()">التالي ➡️</button>
+
+<p>📄 الصفحة <span id="pageNum"></span></p>
+</div>
+</section>
+
+<section id="contact">
+<h2>📞 تواصل معنا</h2>
+<a class="button" href="tel:0788296415">📞 0788296415</a>
+<a class="button" style="background:#25D366" href="https://wa.me/967788296415" target="_blank">💬 واتساب</a>
+</section>
+
+<!-- حماية التحميل -->
+<div id="modal">
+  <div>
+    <h3>🔐 التحميل محمي</h3>
+    <p>سجّل دخولك للتحميل</p>
+    <button class="button download" onclick="confirmDownload()">تأكيد</button>
+    <br><br>
+    <button class="button" onclick="closeModal()">إلغاء</button>
+  </div>
+</div>
+
+<script>
+// 🌙 دارك مود
+function toggleDark(){document.body.classList.toggle("dark")}
+
+// 📊 عداد زوار
+let visits = localStorage.getItem("visits") || 0;
+visits++;
+localStorage.setItem("visits",visits);
+document.getElementById("visits").innerText = visits;
+
+// 👤 تسجيل مستخدم
+function saveUser(){
+  localStorage.setItem("user",document.getElementById("username").value);
+  alert("تم التسجيل ✅");
+}
+
+// 📖 صفحات الكتاب
+const pages=[
+"هذه الصفحة الأولى من كتاب مصر تصمد...",
+"هذه الصفحة الثانية وتتحدث عن الصمود...",
+"الصفحة الثالثة تتعمق في الأحداث...",
+"الصفحة الرابعة خاتمة قوية للكتاب."
+];
+
+let page = localStorage.getItem("page") || 0;
+page = parseInt(page);
+
+function showPage(){
+  document.getElementById("pageText").innerText = pages[page];
+  document.getElementById("pageNum").innerText = page+1;
+  localStorage.setItem("page",page);
+}
+showPage();
+
+function nextPage(){
+  if(page < pages.length-1){page++;showPage()}
+}
+function prevPage(){
+  if(page>0){page--;showPage()}
+}
+function startReading(){
+  document.getElementById("reader").scrollIntoView({behavior:"smooth"});
+}
+
+// 🔐 حماية التحميل
+function openModal(){document.getElementById("modal").style.display="flex"}
+function closeModal(){document.getElementById("modal").style.display="none"}
+function confirmDownload(){
+  alert("سيتم التحميل لاحقًا 🔐");
+  closeModal();
+}
+</script>
+
+</body>
+                                     </html>
+  
 
