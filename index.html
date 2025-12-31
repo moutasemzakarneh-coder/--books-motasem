@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>اختبار – كتب معتصم</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  font-family:Arial;
+  direction:rtl;
+  background:#f4f4f4;
+  margin:0;
+}
+nav{
+  background:#111;
+  color:white;
+  padding:15px;
+  text-align:center;
+}
+section{
+  background:white;
+  margin:20px auto;
+  padding:20px;
+  max-width:800px;
+  border-radius:12px;
+}
+.book{
+  cursor:pointer;
+  padding:15px;
+  border-bottom:1px solid #ddd;
+}
+.book:hover{background:#eee}
+.reader{display:none}
+button{
+  padding:10px 20px;
+  margin:10px;
+}
+</style>
+</head>
+<body>
 
+<nav>📚 اختبار الموقع</nav>
+
+<section id="books">
+  <h2>الكتب</h2>
+  <div class="book" onclick="openBook(0)">📘 كتاب 1</div>
+  <div class="book" onclick="openBook(1)">📗 كتاب 2</div>
+</section>
+
+<section id="reader" class="reader">
+  <h2 id="bookTitle"></h2>
+  <p id="pageText"></p>
+  <button onclick="prevPage()">⬅️</button>
+  <button onclick="nextPage()">➡️</button>
+</section>
+
+<script>
+const books = [
+  {
+    title:"كتاب 1",
+    pages:[
+      "صفحة 1 من الكتاب الأول...",
+      "صفحة 2 من الكتاب الأول...",
+      "صفحة 3 من الكتاب الأول..."
+    ]
+  },
+  {
+    title:"كتاب 2",
+    pages:[
+      "صفحة 1 من الكتاب الثاني...",
+      "صفحة 2 من الكتاب الثاني..."
+    ]
+  }
+];
+
+let currentBook=0, currentPage=0;
+
+function openBook(i){
+  currentBook=i;
+  currentPage=0;
+  document.getElementById("books").style.display="none";
+  document.getElementById("reader").style.display="block";
+  document.getElementById("bookTitle").innerText=books[i].title;
+  showPage();
+}
+
+function showPage(){
+  document.getElementById("pageText").innerText=
+    books[currentBook].pages[currentPage];
+}
+
+function nextPage(){
+  if(currentPage < books[currentBook].pages.length-1){
+    currentPage++; showPage();
+  }
+}
+
+function prevPage(){
+  if(currentPage>0){
+    currentPage--; showPage();
+  }
+}
+</script>
+
+</body>
+</html>
