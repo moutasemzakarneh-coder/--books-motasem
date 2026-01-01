@@ -53,3 +53,76 @@ button{
   padding:10px 20px;border:none;border-radius:8px;
   background:#000;color:#fff
 }
+let user = null;
+let currentBook = null;
+let currentPage = 0;
+
+const books = [
+  {id:1,title:"كتاب 1",pages: longBook("كتاب 1")},
+  {id:2,title:"كتاب 2",pages: longBook("كتاب 2")},
+  {id:3,title:"كتاب 3",pages: longBook("كتاب 3")},
+  {id:4,title:"كتاب 4",pages: longBook("كتاب 4")},
+  {id:5,title:"كتاب 5",pages: longBook("كتاب 5")},
+  {id:6,title:"كتاب 6",pages: longBook("كتاب 6")},
+  {id:7,title:"كتاب 7",pages: longBook("كتاب 7")},
+  {id:8,title:"كتاب 8",pages: longBook("كتاب 8")},
+  {id:9,title:"كتاب 9",pages: longBook("كتاب 9")},
+  {id:10,title:"كتاب 10",pages: longBook("كتاب 10")},
+];
+
+function longBook(title){
+  let pages=[];
+  for(let i=1;i<=15;i++){
+    pages.push(`${title} — فصل ${i}\n\n` +
+      "نص طويل حقيقي للقراءة... ".repeat(60));
+  }
+  return pages;
+}
+
+function login(){
+  user=document.getElementById("username").value;
+  alert("أهلاً "+user);
+  loadBooks();
+}
+
+function loadBooks(){
+  const box=document.getElementById("books");
+  box.innerHTML="";
+  books.forEach(b=>{
+    let d=document.createElement("div");
+    d.className="book";
+    d.innerText=b.title;
+    d.onclick=()=>openBook(b);
+    box.appendChild(d);
+  });
+}
+
+function openBook(book){
+  currentBook=book;
+  currentPage=0;
+  document.getElementById("reader").classList.remove("hidden");
+  document.getElementById("bookTitle").innerText=book.title;
+  showPage();
+}
+
+function showPage(){
+  document.getElementById("pageContent").innerText =
+    currentBook.pages[currentPage];
+  document.getElementById("pageNum").innerText =
+    `صفحة ${currentPage+1}`;
+}
+
+function nextPage(){
+  if(currentPage<currentBook.pages.length-1){
+    currentPage++;showPage();
+  }
+}
+function prevPage(){
+  if(currentPage>0){
+    currentPage--;showPage();
+  }
+}
+
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
