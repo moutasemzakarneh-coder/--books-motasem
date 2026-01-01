@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مكتبة معتصم</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+<nav>
+  <h2>📚 مكتبة معتصم</h2>
+  <button onclick="toggleDark()">🌙</button>
+</nav>
+
+<section id="login">
+  <input id="username" placeholder="اسم المستخدم">
+  <button onclick="login()">تسجيل</button>
+</section>
+
+<section id="books"></section>
+
+<section id="reader" class="hidden">
+  <h2 id="bookTitle"></h2>
+  <div id="pageContent"></div>
+  <button onclick="prevPage()">⬅</button>
+  <span id="pageNum"></span>
+  <button onclick="nextPage()">➡</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+  </html>
